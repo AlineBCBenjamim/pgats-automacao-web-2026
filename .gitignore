@@ -1,0 +1,16 @@
+# Arquivos de ambiente (podem ter senhas), exceto o de exemplo
+.env
+.env.*
+!.env.example
+
+node_modules
+
+*.log
+npm-debug.log*
+
+.DS_Store
+
+cypress/reports
+cypress/screenshots
+cypress/videos
+cypress/downloads

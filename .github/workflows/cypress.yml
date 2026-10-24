@@ -1,0 +1,29 @@
+name: Testes Web (Cypress)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar o projeto
+        uses: actions/checkout@v6
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar os testes (headless)
+        run: npx cypress run --spec cypress/e2e/trabalho-de-conclusao.cy.js
+
+    
+      - name: Subir o relatório HTML
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: relatorio-cypress
+          path: cypress/reports/html
+          if-no-files-found: warn

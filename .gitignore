@@ -4,9 +4,10 @@
 !.env.example
 
 node_modules
+results
 
-*.log
-npm-debug.log*
+.log
+npm_install_debug.log
 
 .DS_Store
 

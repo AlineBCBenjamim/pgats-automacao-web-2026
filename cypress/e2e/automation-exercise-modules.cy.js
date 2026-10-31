@@ -4,7 +4,7 @@ const cadastro = require('../modules/cadastro/index.js');
 
 describe("Automation Exercise", () => {
   //Cadastro
-  it.only("Cadastrar um novo usuário com sucesso", () => {
+  it("Cadastrar um novo usuário com sucesso", () => {
     cy.visit("https://automationexercise.com/");
     cy.get("a[href*=login]").click();
 
